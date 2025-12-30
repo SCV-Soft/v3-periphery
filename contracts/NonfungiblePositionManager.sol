@@ -71,8 +71,10 @@ contract NonfungiblePositionManager is
     constructor(
         address _factory,
         address _WETH9,
-        address _tokenDescriptor_
-    ) ERC721Permit('Uniswap V3 Positions NFT-V1', 'UNI-V3-POS', '1') PeripheryImmutableState(_factory, _WETH9) {
+        address _tokenDescriptor_,
+        string memory _name,
+        string memory _symbol
+    ) ERC721Permit(_name, _symbol, '1') PeripheryImmutableState(_factory, _WETH9) {
         _tokenDescriptor = _tokenDescriptor_;
     }
 
